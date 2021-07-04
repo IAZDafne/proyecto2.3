@@ -34,5 +34,19 @@
   }
   to {
     transform: rotate(360deg);
-  }
+  }    
 }
+.navbar{
+  background-color: rgb(197, 194, 16);
+  margin: 0px;
+  padding: 20px 20px;
+  display: fixed;
+  font: normal 15px/1 "Comic Sans MS", cursive, sans-serif;
+  color: #dbd7ee;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 10px 10px 12px rgba(0,0,0,0.5);
+
+}
+

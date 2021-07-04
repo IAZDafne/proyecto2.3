@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PostForm from './Component/PostForm';
+import AllPost from './Component/AllPost';
+import './App.css'
+import NavBar from './Component/NavBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+render() {
+return (
+<div className="App">
+  <Router>
+  <NavBar/>
+  <Switch>
+    <Route exact  path = '/' component={PostForm}/>
+    <Route exact path = '/AllPost' component = {AllPost }/>
+  </Switch>
+   
+   
+     
+    <AllPost />
+
+    </Router>
+   
+</div>
+);
 }
-
+}
 export default App;
