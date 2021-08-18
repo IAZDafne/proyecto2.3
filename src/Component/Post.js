@@ -14,6 +14,8 @@ class Post extends Component {
       <p>{this.props.post.fechae}</p>
       <p>{this.props.post.prioridad}</p>
       <p>{this.props.post.status}</p>
+      <p>{this.props.post.recursos}</p>
+      <p>{this.props.post.proyecto}</p>
       <button
        onClick={()=>this.props.dispatch({type:'EDIT_POST',id:this.props.post.id})}>
        Edit</button>

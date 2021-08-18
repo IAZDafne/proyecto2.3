@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Post from './Post';
-import Edito from '../Edito';
+import Edito from './Edito';
+import NavBar from './NavBar';
 //import { Link } from 'react-router-dom';
 
 
@@ -9,7 +10,8 @@ import Edito from '../Edito';
 class AllPost extends Component {
 render() {
 return (
- 
+ <>
+ <NavBar/>
 <div>
   <h1 className="post_heading">Todas las Tareas</h1>
   {this.props.posts.map((post) => { 
@@ -21,7 +23,7 @@ return (
 })}
 </div>
   
- 
+ </>
 );
 }
 }

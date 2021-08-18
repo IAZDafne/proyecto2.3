@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PostForm from './Component/PostForm';
 import AllPost from './Component/AllPost';
 import './App.css'
-import NavBar from './Component/NavBar'
+import Proyectos from './Component/proyectos/Proyectos'
+import Home from './Component/Home '
 
 
 class App extends Component {
@@ -11,15 +12,15 @@ render() {
 return (
 <div className="App">
   <Router>
-  <NavBar/>
   <Switch>
-    <Route exact  path = '/' component={PostForm}/>
-    <Route exact path = '/AllPost' component = {AllPost }/>
+    <Route exact to path ='/proyectos' component={Proyectos}/>
+    <Route exact to path ='/' component={Home}/>
+    <Route exact to path = '/crear' component={PostForm}/>
+    <Route exact to path = '/AllPost' component = {AllPost }/>
   </Switch>
    
    
-     
-    <AllPost />
+    
 
     </Router>
    

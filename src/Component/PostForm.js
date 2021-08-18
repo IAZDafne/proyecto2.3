@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './PostForm.css'
 //import {Link } from 'react-router-dom';
+import Navbar from './NavBar'
 
 
 
@@ -16,6 +17,8 @@ e.preventDefault();
  const fechae = this.getFechae.value;
  const prioridad = this.getPrioridad.value;
  const status = this.getStatus.value;
+ const recursos = this.getRecursos.value;
+ const proyecto = this.getProyecto.value;
  
  const data = {
   id: new Date(),
@@ -27,6 +30,8 @@ e.preventDefault();
   fechae,
   prioridad,
   status,
+  recursos,
+  proyecto,
 
   editing: false
  }
@@ -42,11 +47,13 @@ e.preventDefault();
  this.getFechae.value = '';
  this.getPrioridad.value = '';
  this.getStatus.value = '';
- 
+ this.getRecursos.value = '';
+ this.getProyecto.value = '';
 }
 render() {
 return (
-  
+  <>
+  <Navbar/>
 <div className="post-container">
   
 {/*  <div>
@@ -99,12 +106,24 @@ return (
      <h4 className='h4'>Fecha de Entrega:</h4>
     <input className='inputs' type="date" ref={(input) => 
    this.getFechae = input}
-        placeholder="Introduce Fecha de inicio" />
+        placeholder="Introduce Fecha de entrega" />
+   </div>
+
+   <div>
+     <h4 className='h4'>Recursos</h4>
+     <input className='inputs' type='text' ref={(input)=> 
+     this.getRecursos=input} placeholder= 'Introduce Recursos'/>
+   </div>
+
+   <div>
+     <h4 className='h4'>Proyecto</h4>
+     <input className='inputs' type='text' ref={(input)=> 
+     this.getProyecto=input} placeholder= 'Introduce proyecto'/>
    </div>
 
   <div className='prioridad'>
     <h4 className='h4'>Prioridad:</h4>
-   <select className='inputs' id="dropDown" onchange="output(this)"  
+   <select className='inputs' id="dropDown" onChange="output(this)"  
           ref={(select)=>
      this.getPrioridad = select} placeholder='Selecione una Prioridad'>
     <option>Selecione una  </option>
@@ -116,7 +135,7 @@ return (
 
 <div className='status' >
   <h4 className='h4'>Status:</h4>
-<select className='inputs' id="dropDown" onchange="output(this)" 
+<select className='inputs' id="dropDown" onChange="output(this)" 
          ref={(select)=>
      this.getStatus = select} placeholder='Selecione un Status'>
     <option>Selecione uno</option>
@@ -131,6 +150,7 @@ return (
 
   </form>
   </div> 
+  </>
 );
 }
 }

@@ -5,7 +5,8 @@ const postReducer = (state = [], action) => {
   case 'DELETE_POST':
   return state.filter((post) => post.id !== action.id)
   case 'EDIT_POST':
-  return state.map((post) => post.id === action.id ? { ...post, editing: !post.editing } : post)
+  return state.map((post) => post.id === action.id ?
+   { ...post, editing: !post.editing } : post)
   case 'UPDATE':
   return state.map((post) => {
   if (post.id === action.id) {
@@ -19,6 +20,8 @@ const postReducer = (state = [], action) => {
   fechae:action.data.newFechae,
   prioridad:action.data.newPrioridad,
   status:action.data.newStatus,
+  recursos:action.data.newRecursos,
+  proyecto:action.data.newProyecto,
   editing: !post.editing
   }
   } else return post;
